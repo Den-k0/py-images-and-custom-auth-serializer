@@ -1,6 +1,5 @@
 import os
 import uuid
-from pathlib import Path
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
@@ -40,7 +39,7 @@ class Actor(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 
-def movie_image_path(instance: "Movie", filename: str) -> str | Path:
+def movie_image_path(instance: "Movie", filename: str) -> str:
     """
     image.jpg: upload_to="upload/movies" -->
     media/upload/movies/image-SOME-RANDOM_SYBMOLS.jpg
